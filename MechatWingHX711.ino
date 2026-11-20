@@ -67,7 +67,7 @@ void setup(){
 
 
 void loop(){
-    //sensing from HX711 module, channel A, gain 128
+  //sensing from HX711 module, channel A, gain 128
   // 1. Read Channel A (Gain 128)
 
 
