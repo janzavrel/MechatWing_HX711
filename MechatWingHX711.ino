@@ -51,11 +51,13 @@ void setup(){
   scale3.set_gain(128);
   scale4.set_gain(128);
 
-    // Set your calibration factors here
+  /*
+  // Set your calibration factors here
   scale1.set_scale(2280.f); // Set the calibration factor for load cell 1
   scale2.set_scale(2280.f);
   scale3.set_scale(2280.f);
   scale4.set_scale(2280.f);
+  */
 
   scale1.tare(); // Reset the scale to 0
   scale2.tare();
@@ -65,16 +67,23 @@ void setup(){
 
 
 void loop(){
-    //sensing from HX711 module, channel A+B, gain 64
-  // 1. Read Channel A (Gain 128 or 64)
+    //sensing from HX711 module, channel A, gain 128
+  // 1. Read Channel A (Gain 128)
 
 
-  data1 = scale1.read(); 
+  data1 = scale1.read();
+  data2 = scale2.read();
+  data3 = scale3.read();
+  data4 = scale4.read();
 
-
-
-
-
+  Serial.print("Data 1: ");
+  Serial.print(data1);
+  Serial.print(" Data 2: ");
+  Serial.print(data2);
+  Serial.print(" Data 3: ");
+  Serial.print(data3);
+  Serial.print(" Data 4: ");
+  Serial.println(data4);
 
 
 }
