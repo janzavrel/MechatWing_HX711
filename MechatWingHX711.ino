@@ -85,5 +85,5 @@ void loop(){
   Serial.print(" Data 4: ");
   Serial.println(data4);
 
-
+  delay(1000); // Delay for 1 second before the next reading
 }
