@@ -51,13 +51,13 @@ void setup(){
   scale3.set_gain(128);
   scale4.set_gain(128);
 
-  /*
+  
   // Set your calibration factors here
-  scale1.set_scale(2280.f); // Set the calibration factor for load cell 1
-  scale2.set_scale(2280.f);
-  scale3.set_scale(2280.f);
-  scale4.set_scale(2280.f);
-  */
+  scale1.set_scale(1); // Set the calibration factor for load cell 1
+  scale2.set_scale(1);
+  scale3.set_scale(1);
+  scale4.set_scale(1);
+  
 
   scale1.tare(); // Reset the scale to 0
   scale2.tare();
@@ -71,7 +71,8 @@ void loop(){
   // 1. Read Channel A (Gain 128)
 
 
-  data1 = scale1.read();
+  //data1 = scale1.read();
+  data1 = scale1.get_units(5);
   data2 = scale2.read();
   data3 = scale3.read();
   data4 = scale4.read();
@@ -85,5 +86,5 @@ void loop(){
   Serial.print(" Data 4: ");
   Serial.println(data4);
 
-  delay(1000); // Delay for 1 second before the next reading
+  //delay(100); // Delay for 1 second before the next reading
 }
